@@ -122,3 +122,12 @@ Step 21: Add logout.
 - Add similar button to login in Header, with corresponding function.
 
 Step 22: Add Browse.
+
+- Add a button to top toolbar
+
+Step 23: Add Songs ui component. 
+
+- create Songs.vue component in client
+- Add data () which would contain an array of songs.
+- Add mounted () that whenever the component is mounted it will hit a backend end point 
+- Add a new service (SongsService.js) for songs that manages request to backend.
