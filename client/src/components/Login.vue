@@ -1,12 +1,8 @@
 <template>
 <v-layout row wrap align-center>
   <v-flex xs6 offset-xs3>
-    <div class="white elevation-2">
-      <v-toolbar flat dense class="cyan" dark>
-      <v-toolbar-title>Login</v-toolbar-title>
-      </v-toolbar>
-
-      <div class="pl-4 pr-4 pt-2 pb-2">
+    <panel title='Log In'>
+      <div slot="slot1">
         <form name="tab-tracker-form" autocomplete="off">
           <v-text-field
               label="Email"
@@ -19,23 +15,24 @@
               type="password"
               v-model="password"
               autocomplete="new-password"
-              outline
-            ></v-text-field>
-          </form>
-        <br>
-        <div>
-          <v-alert v-bind:value="error" type="error" v-html="error" light />
-        </div>
-        <br>
-        <v-btn class="cyan" @click="login" dark>Login</v-btn>
+              outline>
+          </v-text-field>
+          <br>
+          <div>
+            <v-alert v-bind:value="error" type="error" v-html="error" light />
+          </div>
+          <br>
+          <v-btn class="cyan" @click="login" dark>Login</v-btn>
+        </form>
       </div>
-    </div>
+    </panel>
   </v-flex>
 </v-layout>
 
 </template>
 
 <script>
+import Panel from '@/components/Panel'
 import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
@@ -60,6 +57,9 @@ export default {
         console.log(this.error)
       }
     }
+  },
+  components: {
+    Panel
   }
 }
 </script>
