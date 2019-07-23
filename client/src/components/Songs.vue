@@ -2,7 +2,7 @@
 <v-layout row wrap align-center>
   <v-flex xs6 offset-xs3>
     <my-panel title="Songs">
-      <div v-for="song in songs" :key="song.title" slot="slot1">
+      <div v-for="song in songs" :key="song.id" slot="slot1">
         {{song.title}}
         {{song.artist}}
         {{song.album}}
@@ -25,7 +25,8 @@ export default {
     }
   },
   async mounted () {
-    this.songs = await SongsService.index()
+    this.songs = (await SongsService.index()).data // Don't forget to put .data when you send "get" requests. This is how axios returns the data.
+    console.log(this.songs)
   }
 }
 </script>

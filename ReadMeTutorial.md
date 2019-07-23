@@ -131,3 +131,14 @@ Step 23: Add Songs ui component.
 - Add data () which would contain an array of songs.
 - Add mounted () that whenever the component is mounted it will hit a backend end point 
 - Add a new service (SongsService.js) for songs that manages request to backend.
+
+Step 24: Add Songs end-point to the server side.
+
+- Add "songs" route to "routes.js"
+- Create a new controller for songs ("SongsController.js" )
+- Create a song model (Songs.js) in the "models" directory.
+- create both get and post requests
+
+Step 25: Create Songs:
+
+- create ui for creating songs ("CreateSongs.vue")
